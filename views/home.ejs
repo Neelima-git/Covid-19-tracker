@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid-19 App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+   <style>
+      *{
+      margin: 0;
+      padding: 0;
+      }
+
+      h1{
+        font-family: sans-serif;
+        color: white;
+        margin-top: 25px;
+      }
+
+      .custom-shape-divider-bottom-1617946954 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+    }
+
+    .custom-shape-divider-bottom-1617946954 svg {
+        position: relative;
+        display: block;
+        width: calc(125% + 1.3px);
+        height: 210px;
+    }
+
+    .custom-shape-divider-bottom-1617946954 .shape-fill {
+        fill: #FFFFFF;
+    }
+    
+      
+
+    @media only screen and (max-width: 768px){
+       .custom-shape-divider-bottom-1617946954{
+          display: none;
+          }
+
+          form{
+             margin-left: 5em;
+          }
+
+          @keyframes gradient {
+                0% {
+                  background-position: 0% 40%;
+                }
+                40%{
+                  background-position: 40% 80%;
+                }           
+                80% {
+                  background-position: 80% 100%;
+                }
+          }
+    }
+
+    @media only screen and (min-width: 769px){
+           @keyframes gradient {
+                0% {
+                  background-position: 0% 40%;
+                }
+                40%{
+                  background-position: 40% 80%;
+                }           
+                80% {
+                  background-position: 80% 100%;
+                }
+          }
+    }
+
+    </style>
+
+  <body class="home">
+  <div style="position: relative; background-image: linear-gradient(60deg, #bfdbf7, #1f7a8c, #71697A, #D0E1D4); background-size: 400%; animation: gradient 10s ease infinite; min-height: 80vh";
+   >
+
+    <div class="d-flex flex-column align-content-center">
+      <br />
+      <br />
+      <center><h1><span style="padding: 20px;"><img src="https://img.icons8.com/doodle/48/000000/coronavirus.png"/></span><b>Covid-19 Statistics</b></h1></center>
+      <br />
+
+    <div class="row">
+
+      <div class="col-md-6">
+          <center><img src="https://cdn.pixabay.com/photo/2020/04/02/03/10/coronavirus-4993235_960_720.png" width="250px"></center>
+      </div>
+      <br/>
+
+      <div class="col-md-6" > 
+      <form
+        action="/searchCountry"
+        method="GET"
+        class="mt-5 justify-content-center d-flex"
+      >
+        <input
+          type="text"
+          class="form-control w-30"
+          placeholder="Search by country name..."
+          name="country"
+        />
+        <button class="ml-3 text-center btn btn-warning" style="margin-right: 10em;">Search</button>
+      </form>
+
+      <form
+      action="/searchContinent"
+      method="GET"
+      class="mt-5 justify-content-center d-flex"
+    >
+      <input
+        type="text"
+        class="form-control w-30"
+        placeholder="Search by continent name..."
+        name="continent"
+      />
+      <button class="ml-3 text-center btn btn-warning" style="margin-right: 10em;" > Search </button>
+    </form>
+
+      </div>
+    </div>
+    
+    <div class="custom-shape-divider-bottom-1617946954 ">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+  </div>
+    </div>
+  </body>
+</html>

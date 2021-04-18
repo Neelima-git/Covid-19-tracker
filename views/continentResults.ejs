@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Covid-19 | Results</title>
+  </head>
+
+  <style>
+     .results{
+      position: relative;
+      background-image: linear-gradient(to right, #f6e7cb, #dd9787, #e56b6f, #f4acb7);
+      animation: gradient 10s ease infinite;
+      background-size: 400%;
+    }
+    
+    @keyframes gradient {
+                0% {
+                  background-position: 0% 40%;
+                }
+                40%{
+                  background-position: 40% 80%;
+                }           
+                80% {
+                  background-position: 80% 100%;
+                }
+          }
+
+    h3{
+      color: #111;
+      font-family: serif;
+    }
+
+  </style>
+
+  <body class="results"> 
+    <div class="row">
+    <div class="col-md-6 col-lg-6 mt-5">
+      <center><h3><b><u>Covid-19 Statistics for <%= result_data.continent %></u></b></h3></center>
+      <section class="d-flex justify-content-center align-content-center">
+        <table class="table table-bordered  p-5 m-5" style="width: 60%">
+        
+          <tr style="background-color: #ffc300;">
+            <th>Total Cases</th>
+            <td><%= result_data.cases%></td>
+          </tr>
+          <tr style="background-color: #ffc300;">
+            <th>Today's Cases</th>
+            <td><%= result_data.todayCases%></td>
+          </tr>
+          <tr style="background-color: #f94144;">
+            <th >Total Deaths</th>
+            <td><%= result_data.deaths%></td>
+          </tr>
+          <tr style="background-color: #f94144;">
+            <th >Today Deaths</th>
+            <td><%= result_data.todayDeaths%></td>
+          </tr>
+          <tr  style="background-color: #90be6d;">
+            <th>Total Recovered</th>
+            <td><%= result_data.recovered%></td>
+          </tr>
+          <tr style="background-color: #90be6d;">
+            <th>Today Recovered</th>
+            <td><%= result_data.todayRecovered%></td>
+          </tr>
+          <tr style="background-color: #98c9a3;">
+            <th>Active</th>
+            <td><%= result_data.active%></td>
+          </tr>
+          <tr style="background-color: #7b2d26; color: #fff">
+            <th>Critical</th>
+            <td><%= result_data.critical%></td>
+          </tr>
+          <tr style="background-color: #ff86c8;">
+             <th>Tests</th>
+             <td><%= result_data.tests%></td>
+          </tr>
+        </table>
+      </section>
+
+    </div>
+ 
+      <div class="col-md-6 col-lg-6">   
+        <section class="d-flex justify-content-center align-content-center">  
+          <div class="mt-5">
+                  <div><h3>Want to search for another continent?</h3></div>
+                  <div>       
+                    <form
+                    action="/searchContinent"
+                    method="GET"
+                    class="mt-1 mb-5 d-flex"
+                  >
+                    <input
+                      type="text"
+                      class="form-control w-30"
+                      placeholder="Search by continent name..."
+                      name="continent"
+                    />
+                    <button class="ml-3 text-center btn btn-warning" style="margin-right: 30px;" > Search </button>
+                  </form>
+                  </div> 
+                  
+                  <div>
+                    <h3>Go back home! &nbsp;&nbsp;<a class="btn btn-warning" href="/">Home</a> </h3>
+                  </div>
+                 
+          </div> 
+        </section> 
+       </div>
+
+  </div>
+</body>
+</html>
